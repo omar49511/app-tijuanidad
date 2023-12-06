@@ -1,0 +1,12 @@
+.mapImage {
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+}
+.containerMap {
+  overflow: hidden;
+  cursor: move;
+  border-radius: 10px;
+  background: #000;
+}
