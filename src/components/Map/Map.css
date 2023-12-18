@@ -1,12 +1,17 @@
-.mapImage {
-  width: auto;
-  height: auto;
-  max-width: none;
-  max-height: none;
-}
-.containerMap {
-  overflow: hidden;
-  cursor: move;
-  border-radius: 10px;
+.map {
+  margin-top: 3.125rem;
+  height: 50%;
+  position: relative;
   background: #000;
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.wrapper__img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }

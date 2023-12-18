@@ -125,10 +125,9 @@ export default function Home() {
             <div className="content">
               <h2 className="title">TITULO 6</h2>
               <p className="description">
-                {" "}
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Tempore fuga voluptatum, iure corporis inventore praesentium
-                nisi. Id laboriosam ipsam enim.{" "}
+                nisi. Id laboriosam ipsam enim.
               </p>
               <button>Read More</button>
             </div>

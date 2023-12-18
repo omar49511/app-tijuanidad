@@ -32,12 +32,12 @@ export default function Navbar() {
       <nav className={`header__nav ${menu ? "isActive" : ""}`}>
         <ul className="header__ul">
           <li className="header__li">
-            <a href="" className="header__a">
+            <a href="/" className="header__a">
               Inicio
             </a>
           </li>
           <li className="header__li">
-            <a href="" className="header__a">
+            <a href="/map" className="header__a">
               Mapa
             </a>
           </li>
