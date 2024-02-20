@@ -1,37 +1,37 @@
 "use client";
-import React, { useRef, useState } from "react";
-import "./Map.css";
+import React from "react";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import Image from "next/image";
-import {
-  TransformWrapper,
-  TransformComponent,
-  useControls,
-} from "react-zoom-pan-pinch";
 
-export default function Map({ imageUrl }) {
-  const Controls = () => {
-    const { zoomIn, zoomOut, resetTransform } = useControls();
-    return (
-      <>
-        <button onClick={() => zoomIn()}>Zoom In</button>
-        <button onClick={() => zoomOut()}>Zoom Out</button>
-        <button onClick={() => resetTransform()}>Reset</button>
-      </>
-    );
-  };
+const ZoomableImage = ({ imageUrl }) => {
   return (
-    <div className="map">
-      <TransformWrapper className="wrapper">
-        <Controls></Controls>
+    <div
+      style={{
+        height: "800px",
+        width: "100%",
+        backgroundColor: "lightgray",
+        marginTop: "40px",
+      }}
+    >
+      <TransformWrapper
+        initialPositionX={-1250} // Posición inicial en X
+        initialPositionY={0.9} // Posición inicial en Y
+        initialScale={3} // Zoom por defecto
+      >
         <TransformComponent>
-          <Image
-            src={imageUrl}
-            alt="test"
-            className="wrapper__img"
-            style={{ height: "100%", width: "100%", objectFit: "cover" }}
-          />
+          <div
+            style={{
+              height: "800px",
+              width: "90%",
+              backgroundColor: "lightgray",
+            }}
+          >
+            <Image src={imageUrl} alt="test" width={2200} height={550} />
+          </div>
         </TransformComponent>
       </TransformWrapper>
     </div>
   );
-}
+};
+
+export default ZoomableImage;

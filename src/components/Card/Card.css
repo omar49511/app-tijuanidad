@@ -1,0 +1,114 @@
+.card {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  margin: auto;
+  background-color: rgba(57, 58, 58, 0.555);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 3px 26px 45px -19px rgba(0, 0, 0, 0.56);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #f5af40ff;
+  transition: 0.5s;
+}
+.card .imgBox {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+.donkey {
+  height: 200px;
+  width: auto;
+}
+
+.card .contentBox {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card .contentBox .buy {
+  position: relative;
+  top: 0px;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  background: #9f7129;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+
+.card:hover .contentBox .buy {
+  color: #000000;
+  background-color: #f5af40;
+}
+
+/* skin 2 */
+.skin-2 .num-in {
+  background: #4b4a4a8f;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 25px;
+  height: 40px;
+  width: 110px;
+  float: left;
+}
+
+.skin-2 .num-in span {
+  width: 40%;
+  display: block;
+  height: 40px;
+  float: left;
+  position: relative;
+}
+
+.skin-2 .num-in span:before,
+.skin-2 .num-in span:after {
+  content: "";
+  position: absolute;
+  background-color: #f5af40ff;
+  height: 2px;
+  width: 10px;
+  top: 50%;
+  left: 50%;
+  margin-top: -1px;
+  margin-left: -5px;
+}
+
+.skin-2 .num-in span.plus:after {
+  transform: rotate(90deg);
+}
+
+.skin-2 .num-in input {
+  color: #ffffff;
+  float: left;
+  width: 20%;
+  height: 40px;
+  border: none;
+  text-align: center;
+  background: #4b4a4a8f;
+}
+.skin-2 .num-in input:focus {
+  outline: none;
+}
+
+/* / skin 2 */
