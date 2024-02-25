@@ -1,15 +1,15 @@
 .container_slider {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 5rem);
   display: flex;
   justify-content: center;
 }
 
 .slider {
   position: absolute;
-  inset: 80px 200px 80px 80px;
-  background: #000;
+  inset: 30px 200px 35px 200px;
+  overflow: hidden;
 }
 
 .slider .slides {
@@ -55,7 +55,7 @@
 
 .buttons {
   position: absolute;
-  bottom: 100px;
+  bottom: 80px;
   display: flex;
   gap: 20px;
 }
@@ -86,4 +86,58 @@
 
 .buttons button:active {
   opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+  .slider {
+    position: absolute;
+    inset: 20px 40px 20px 40px;
+  }
+  .slider .slides {
+    width: 100px;
+    height: 100px;
+    top: 80px;
+  }
+  .slider .slides:nth-child(1),
+  .slider .slides:nth-child(2) {
+    top: initial;
+    bottom: 0px;
+  }
+  .slider .slides:nth-child(3) {
+    left: 20px;
+  }
+  .slider .slides:nth-child(4) {
+    left: 140px;
+  }
+  .slider .slides:nth-child(5) {
+    left: 260px;
+  }
+  .slider .slides:nth-child(6) {
+    left: 380px;
+  }
+}
+.cont {
+  z-index: 3;
+  position: absolute;
+  width: 500px;
+  background-color: rgba(57, 58, 58, 0.555);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  padding: 2rem;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.name {
+  font-size: 3rem;
+  font-weight: bold;
+}
+.name .blue {
+  color: #00a3deff;
+}
+.name .red {
+  color: #e32085ff;
+}
+.des {
+  font-size: 1.5rem;
 }

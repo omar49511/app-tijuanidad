@@ -2,12 +2,10 @@
 import { useState } from "react";
 import "./Navbar.css";
 import Image from "next/image";
-import { url } from "inspector";
-import { title } from "process";
 import Link from "next/link";
 
 const menuItems = [
-  { url: "/home", title: "Inicio" },
+  { url: "/", title: "Inicio" },
   { url: "/map", title: "Mapa" },
   { url: "/stories", title: "Historias" },
   { url: "/store", title: "Tienda" },
@@ -26,7 +24,7 @@ export default function Navbar() {
         <Image
           priority
           className="header__img"
-          src="/tijuanidad_pequeno.png"
+          src="/assets/tijuanidad_pequeno.png"
           alt="Tijuanidad"
           width={300}
           height={80}
@@ -51,7 +49,7 @@ export default function Navbar() {
           <div className="w-10 h-1 bg-white rounded"></div>
         </button>
         {menu && (
-          <div className="absolute top-0 left-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-8 text-4xls">
+          <div className="fixed top-0 left-0 w-screen h-screen bg-red-600 text-white flex flex-col items-center justify-center gap-8 text-4xls z-[5]">
             {/*Menu list*/}
             {menuItems.map((item, index) => (
               <Link href={item.url} key={index}>

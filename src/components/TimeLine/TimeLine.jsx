@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import "./TimeLine.css";
+import Modal from "@/components/Modal/Modal";
 
 const timelineData = [
   {
@@ -58,12 +59,11 @@ const timelineData = [
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non tortor et lectus suscipit vehicula quis gravida enim. Vivamus dignissim sem a varius consectetur.",
   },
-  // Add other timeline data objects here
 ];
 
 export default function TimeLine() {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const [modalImageUrl, setModalImageUrl] = useState(null);
   useEffect(() => {
     const handleScroll = () => {
       const timelineItems = document.querySelectorAll(".timeline-item");
@@ -87,6 +87,16 @@ export default function TimeLine() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const openModal = (imageUrl, index) => {
+    setModalImageUrl(index === activeIndex ? imageUrl : null); // Solo abrir el modal si se hace clic en la imagen activada
+    document.body.style.overflow = index === activeIndex ? "hidden" : ""; //desactivar el scroll al abrir el modal
+  };
+
+  const closeModal = () => {
+    setModalImageUrl(null);
+    document.body.style.overflow = ""; //activar el scroll al cerrar el modal
+  };
   return (
     <div className="timeline-container" id="timeline-1">
       <div className="timeline-header">
@@ -106,10 +116,11 @@ export default function TimeLine() {
             className={`timeline-item ${
               index === activeIndex ? "timeline-item--active" : ""
             }`}
+            onClick={() => openModal(item.imageUrl, index)}
           >
             <div className="timeline__content">
               <Image
-                width={500}
+                width={600}
                 height={400}
                 className="timeline__img"
                 src={item.imageUrl}
@@ -121,6 +132,7 @@ export default function TimeLine() {
           </div>
         ))}
       </div>
+      {modalImageUrl && <Modal imageUrl={modalImageUrl} onClose={closeModal} />}
     </div>
   );
 }

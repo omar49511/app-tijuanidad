@@ -15,7 +15,7 @@
   height: auto;
   display: block;
 }
-.header__button {
+/* .header__button {
   display: none;
   cursor: pointer;
 }
@@ -90,4 +90,4 @@
   .header__a:hover {
     background-color: #ffffff;
   }
-}
+} */

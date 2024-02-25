@@ -4,19 +4,19 @@ import "./VentaCurios.css";
 import Image from "next/image";
 
 const cardsData = [
-  { id: 1, color: "#f5af40ff" },
-  { id: 2, color: "#2aafe8ff" },
-  { id: 3, color: "#e81e83ff" },
-  { id: 4, color: "#1bb57fff" },
-  { id: 5, color: "#f5af40ff" },
-  { id: 6, color: "#2aafe8ff" },
-  { id: 7, color: "#e81e83ff" },
-  { id: 8, color: "#1bb57fff" },
+  { id: 1 },
+  { id: 2 },
+  { id: 3 },
+  { id: 4 },
+  { id: 5 },
+  { id: 6 },
+  { id: 7 },
+  { id: 8 },
 ];
 
 export default function page() {
   return (
-    <div className="flex flex-col w-[90%] max-w-[1100px]">
+    <div className="flex flex-col w-[90%] max-w-[1100px] -z-10">
       <div className="banner">
         <Image
           className="img"
@@ -36,12 +36,7 @@ export default function page() {
       </div>
       <div className="curios">
         {cardsData.map((card) => (
-          <Card
-            key={card.id}
-            id={card.id}
-            image={card.image}
-            color={card.color}
-          />
+          <Card key={card.id} id={card.id} />
         ))}
       </div>
     </div>
