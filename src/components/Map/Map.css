@@ -1,3 +1,6 @@
-.container-map {
-  margin-top: 2rem;
+.custom-marker:hover {
+  transform: scale(
+    1.1
+  ); /* Ejemplo de estilo de hover: aumenta el tamaño del marcador */
+  /* Agrega otros estilos de hover según tus necesidades */
 }

@@ -1,10 +1,24 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 
 import "./Card.css";
 
 export default function Card({ id }) {
+  const [quantity, setQuantity] = useState(0); // Estado para almacenar la cantidad
+
   const imagePath = `/assets/burro${id}.png`;
+
+  const handleIncrement = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleDecrement = () => {
+    if (quantity > 0) {
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    }
+  };
+
   return (
     <div className={`card card-${id}`}>
       <div className="imgBox">
@@ -20,9 +34,15 @@ export default function Card({ id }) {
       <div className="contentBox">
         <div className="num-block skin-2">
           <div className="num-in">
-            <span className="minus dis"></span>
-            <input type="text" className="in-num" name={`image${id}`} />
-            <span className="plus"></span>
+            <span className="minus dis" onClick={handleDecrement}></span>
+            <input
+              type="text"
+              className="in-num"
+              name={`image${id}`}
+              value={quantity}
+              onChange={() => {}} // Vacía para evitar advertencias de consola
+            />
+            <span className="plus" onClick={handleIncrement}></span>
           </div>
         </div>
         <a href="#" className="buy">

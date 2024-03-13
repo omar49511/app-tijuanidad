@@ -14,7 +14,7 @@
   padding: 0 10px;
   box-sizing: border-box;
   font-family: "Oswald", sans-serif;
-  color: #fff;
+  color: #e3207e;
 }
 .timeline__content-desc {
   margin: 0;
@@ -28,11 +28,11 @@
 .timeline:before {
   position: absolute;
   left: 50%;
-  width: 2px;
+  width: 3px;
   height: 100%;
   margin-left: -1px;
   content: "";
-  background: rgba(255, 255, 255, 0.07);
+  background: #00a3de49;
 }
 @media only screen and (max-width: 767px) {
   .timeline:before {

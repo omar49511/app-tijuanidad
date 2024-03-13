@@ -18,7 +18,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 header">
+    <div className="h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 header z-40">
       {/*Logo*/}
       <div className="header__logo">
         <Image
@@ -49,7 +49,7 @@ export default function Navbar() {
           <div className="w-10 h-1 bg-white rounded"></div>
         </button>
         {menu && (
-          <div className="fixed top-0 left-0 w-screen h-screen bg-red-600 text-white flex flex-col items-center justify-center gap-8 text-4xls z-[5]">
+          <div className="fixed top-0 left-0 w-screen h-screen bg-red-600 text-white flex flex-col items-center justify-center gap-8 text-4xls z-50">
             {/*Menu list*/}
             {menuItems.map((item, index) => (
               <Link href={item.url} key={index}>

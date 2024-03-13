@@ -6,19 +6,19 @@ import Modal from "@/components/Modal/Modal";
 
 const timelineData = [
   {
-    year: "1881",
+    year: "1920",
     imageUrl: "https://www.mexicoenfotos.com/MX13229838190300.jpg",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non tortor et lectus suscipit vehicula quis gravida enim. Vivamus dignissim sem a varius consectetur.",
+      'La famosa cantina "La Ballena", conocida internacionalmente como "The Longest Bar in The World " llegó a ser la barra/cantina más larga del mundo. Uno de los grandes referentes de Tijuana durante la era de la prohibición.',
   },
   {
-    year: "1881",
+    year: "1960",
     imageUrl: "https://www.mexicoenfotos.com/MX14093370268777.jpg",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non tortor et lectus suscipit vehicula quis gravida enim. Vivamus dignissim sem a varius consectetur.",
+      "Restaurante “El sombrero”, famoso en Tijuana, por un tiempo fue conocido como el sombrero más grande del mundo…",
   },
   {
-    year: "1881",
+    year: "1927",
     imageUrl: "https://www.mexicoenfotos.com/MX16554393010004.jpg",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque non tortor et lectus suscipit vehicula quis gravida enim. Vivamus dignissim sem a varius consectetur.",

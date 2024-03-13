@@ -16,7 +16,7 @@ const cardsData = [
 
 export default function page() {
   return (
-    <div className="flex flex-col w-[90%] max-w-[1100px] -z-10">
+    <div className="flex flex-col w-[90%] max-w-[1100px]">
       <div className="banner">
         <Image
           className="img"

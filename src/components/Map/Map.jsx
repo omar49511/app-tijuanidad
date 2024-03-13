@@ -1,56 +1,58 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import { MapContainer, ImageOverlay, Marker, Popup } from "react-leaflet";
+import { Icon } from "leaflet";
+import { CRS } from "leaflet";
+import "./Map.css";
 
 const ImageMap = () => {
-  const mapRef = useRef(null);
-
-  useEffect(() => {
-    if (!mapRef.current) {
-      const map = L.map("map", {
-        minZoom: 1,
-        maxZoom: 5,
-        crs: L.CRS.Simple,
-      });
-
-      const width = 3000;
-      const height = 702;
-
-      const imageUrl = "/assets/metropoli2go_map.png";
-      const bounds = [
-        [0, 0],
-        [height, width],
-      ];
-
-      L.imageOverlay(imageUrl, bounds).addTo(map);
-      map.fitBounds(bounds);
-      map.setMaxBounds(bounds);
-      mapRef.current = map;
-
-      const markerLocations = [
-        [150, 200],
-        [200, 300],
-        [300, 400],
-        [400, 450],
-      ];
-
-      // Crea los marcadores con el icono personalizado y las coordenadas
-      markerLocations.forEach((location) => {
-        L.marker(location)
-          .addTo(map)
-          .on("click", () => {
-            alert("Haz clic en el marcador");
-          });
-      });
-    }
-  }, []);
+  const markerLocations = [
+    [260, 1030],
+    [340, 2000],
+    [400, 450],
+  ];
+  const customIcon = new Icon({
+    iconUrl: "/assets/marker.png",
+    iconSize: [50, 75],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+  });
 
   return (
-    <div
-      id="map"
-      style={{ width: "100%", height: "456px", borderRadius: "20px" }}
-    ></div>
+    <MapContainer
+      center={[300, 500]}
+      zoom={1}
+      minZoom={0}
+      maxZoom={5}
+      maxBounds={[
+        [0, 0],
+        [702, 3000],
+      ]}
+      crs={CRS.Simple}
+      style={{
+        width: "100%",
+        height: "100%",
+        borderRadius: "20px",
+      }}
+    >
+      <ImageOverlay
+        url="/assets/metropoli2go_map.png"
+        bounds={[
+          [0, 0],
+          [702, 3000],
+        ]}
+      />
+      {markerLocations.map((location, index) => (
+        <Marker
+          key={index}
+          position={location}
+          icon={customIcon}
+          className="custom-marker"
+        >
+          <Popup>A pretty CSS3 popup. Easily customizable.</Popup>
+        </Marker>
+      ))}
+    </MapContainer>
   );
 };
 

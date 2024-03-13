@@ -44,7 +44,7 @@
   z-index: 2;
 }
 
-.card .contentBox .buy {
+.buy {
   position: relative;
   top: 0px;
   padding: 10px 30px;
@@ -58,7 +58,7 @@
   transition: 0.5s;
 }
 
-.card:hover .contentBox .buy {
+.buy:hover {
   color: #000000;
   background-color: #f5af40;
 }
@@ -74,6 +74,7 @@
 }
 
 .skin-2 .num-in span {
+  cursor: pointer;
   width: 40%;
   display: block;
   height: 40px;
