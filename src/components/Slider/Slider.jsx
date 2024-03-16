@@ -1,10 +1,9 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./Slider.css";
 
 export default function Slider() {
   const sliderRef = useRef(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   const slides = [
     "/slide_tijuanidad_01.jpeg",
@@ -19,12 +18,10 @@ export default function Slider() {
 
   const nextSlide = () => {
     sliderRef.current.appendChild(sliderRef.current.firstElementChild);
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
   };
 
   const prevSlide = () => {
     sliderRef.current.prepend(sliderRef.current.lastElementChild);
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
   };
 
   useEffect(() => {
