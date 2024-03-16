@@ -5,7 +5,7 @@ import { useState } from "react";
 
 const menuItems = [
   { url: "/", title: "Inicio" },
-  { url: "/map", title: "Mapa" },
+  { url: "/mapa", title: "Mapa" },
   { url: "/stories", title: "Historias" },
   { url: "/store", title: "Tienda" },
 ];
